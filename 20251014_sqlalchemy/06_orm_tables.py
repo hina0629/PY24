@@ -99,3 +99,8 @@ with Session(engine) as session:
         print(f'User {user.id} = {user.name}')
         for order in user.orders:
             print(f'  Order {order.id} : amount={order.amount}')
+
+# 削除 ※外部キー制約が掛かっているため、親を単独で削除することはできない。（エラーになる）
+# with Session(engine) as session:
+#     user = session.query(User).filter(User.id==3).delete()
+#     session.commit()
