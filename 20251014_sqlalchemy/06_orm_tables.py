@@ -74,3 +74,17 @@ Base.metadata.create_all(bind=engine)
 #         order = Order(user_id=id, amount=amount)
 #         session.add(order)
 #         session.commit()
+
+# 取得
+with Session(engine) as session:
+    users = session.query(User).all()
+    for user in users:
+        print(f'User {user.id} = {user.name}')
+
+        # relationship を設定しているので、
+        # 以下コードで関連先を取り出すことができる。
+        for order in user.orders:
+            print(f'  Order {order.id} : amount={order.amount}')
+            # echo=Falseにしたら実行結果が見やすくなる
+        
+        # user.orders で都度SQLが実行される→N+1問題
