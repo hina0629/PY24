@@ -66,3 +66,11 @@ Base.metadata.create_all(bind=engine)
 #     session.add(order)
 #     session.commit()
 
+# オーダー登録(存在するユーザーIDで登録できること)
+# with Session(engine) as session:
+#     ids = [1,1,2,3,2]
+#     amounts = [10,20,50,40,10]
+#     for id, amount in zip(ids, amounts):
+#         order = Order(user_id=id, amount=amount)
+#         session.add(order)
+#         session.commit()
