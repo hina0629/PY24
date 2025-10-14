@@ -61,7 +61,8 @@ Base.metadata.create_all(bind=engine)
 #         session.commit()
 
 # 外部キー検証(存在しないユーザーIDでは登録できない)
-with Session(engine) as session:
-    order = Order(user_id=10, amount=2)
-    session.add(order)
-    session.commit()
+# with Session(engine) as session:
+#     order = Order(user_id=10, amount=2)
+#     session.add(order)
+#     session.commit()
+
