@@ -88,3 +88,14 @@ with Session(engine) as session:
             # echo=Falseにしたら実行結果が見やすくなる
         
         # user.orders で都度SQLが実行される→N+1問題
+
+# 取得(一括取得)※JOINが用いられるので、
+# こっちのほうが早い(N+1問題の解消)
+from sqlalchemy.orm import joinedload
+
+with Session(engine) as session:
+    users = session.query(User).options(joinedload(User.orders)).all()
+    for user in users:
+        print(f'User {user.id} = {user.name}')
+        for order in user.orders:
+            print(f'  Order {order.id} : amount={order.amount}')
