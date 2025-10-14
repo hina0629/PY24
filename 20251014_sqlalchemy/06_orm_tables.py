@@ -52,3 +52,10 @@ class Order(Base):
 
 # テーブルの生成
 Base.metadata.create_all(bind=engine)
+
+# ユーザー登録
+# with Session(engine) as session:
+#     for name in ['a', 'b', 'c']:
+#         user = User(name=name)
+#         session.add(user)
+#         session.commit()
