@@ -28,5 +28,10 @@ def index():
 def hello():
     return 'hello'
 
+# @app.route('/hello2')
+# def hello():
+#     return 'hello2'
+# ダブりは起動しない
+
 if __name__ == '__main__':
     app.run('0.0.0.0', 80, True)
