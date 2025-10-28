@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>画像など</h1>
-    <img src="../static/logo.png" alt="ロゴ">
+    <h2>画像など</h2>
+
+    {# 静的(static)なファイル(image,css,js等)は、staticフォルダに配置する必要がある。 #}
+    <img src="/static/img/logo.png">
+
+    {#
+        URLはハードコーディングせず、関数を用いて取得するのが一般的。
+        文字コード回りの対応や、URL変更時の保守性に強い。
+        [URL取得関数の書式]
+        url_for(エンドポイント名 [, key=data])
+    #}
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="関数でURLを取得">
+
+    {# CSS #}
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+
+    {# JS #}
+    <script src="{{ url_for('static', filename='js/sample.js') }}"></script>
 </body>
+
 </html>
