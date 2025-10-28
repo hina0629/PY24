@@ -61,5 +61,17 @@ def if_for():
 def img_etc():
     return render_template('img_etc.html')
 
+# コンポーネント
+# ctrl + d で同じやつ一気に選択して変えられる
+# 変え終わったらEscでぬける
+@app.route('/component')
+def component():
+    return render_template('component.html')
+
+# レイアウト継承
+@app.route('/extends')
+def extends():
+    return render_template('extends.html')
+
 if __name__ == '__main__':
     app.run('0.0.0.0', 80, True)
