@@ -22,7 +22,11 @@ def index():
 @app.route('/pass_data')
 def pass_data():
     # 第二引数以降に、名前付き引数で渡す。
-    return render_template('pass_data.html', id=123, name='<h2>abc</h2>')
+    return render_template(
+                            'pass_data.html',
+                            id=123,
+                            name='<h2>abc</h2>'
+                            )
 
 # if for
 @app.route('/if_for')
@@ -34,10 +38,12 @@ def if_for():
         'g':'緑',
         'b':'青'
     }
-    return render_template('if_for.html',
+    return render_template(
+                            'if_for.html',
                             age=age,
                             colors=colors,
-                            colors_dic=colors_dic)
+                            colors_dic=colors_dic
+                            )
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 80, True)
