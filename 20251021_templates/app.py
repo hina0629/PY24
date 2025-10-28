@@ -56,5 +56,10 @@ def if_for():
                             users = users
                             )
 
+# img/js/css
+@app.route('/img_etc')
+def img_etc():
+    return render_template('img_etc.html')
+
 if __name__ == '__main__':
     app.run('0.0.0.0', 80, True)
