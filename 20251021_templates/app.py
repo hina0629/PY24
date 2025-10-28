@@ -38,11 +38,22 @@ def if_for():
         'g':'緑',
         'b':'青'
     }
+
+    # userモジュールからUserクラスを取得
+    from user import User
+    # ↓ sqlalchemyのselectで持ってきたときも同じ感じになる
+    users = [
+        User(1,'a'),
+        User(2,'b'),
+        User(3,'c')
+        ]
+
     return render_template(
                             'if_for.html',
                             age=age,
                             colors=colors,
-                            colors_dic=colors_dic
+                            colors_dic=colors_dic,
+                            users = users
                             )
 
 if __name__ == '__main__':

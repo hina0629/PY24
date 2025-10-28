@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
     <h1>制御構造</h1>
     {#
-        {% %}
-        でくくって、制御構造を
-        記述する。
+    {% %}
+    でくくって、制御構造を
+    記述する。
     #}
-    
-    {% if 18 <= age %}
-        <p>成年</p>
-    {% else %}
+
+    {% if 18 <= age %} <p>成年</p>
+        {% else %}
         <p>未成年</p>
-    {% endif %} {# endXX必須 #}
+        {% endif %} {# endXX必須 #}
 
-    <ul>
-        {% for color in colors %}
+        <ul>
+            {% for color in colors %}
             <li>{{ color }}</li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
 
-    <ul>
-        {% for en, ja in colors_dic.items() %}
+        <ul>
+            {% for en, ja in colors_dic.items() %}
             <li>{{ en }} : {{ ja }}</li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
 
-    {# 
+        {#
         forの中であれば、繰り返し回数が
         loop.index にて取得可能
-    #}
+        #}
 
-    <ul>
-        {% for color in colors %}
+        <ul>
+            {% for color in colors %}
             <li>{{ loop.index }}{{ color }}</li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                </tr>
+            {% endfor %}
+        </table>
 </body>
+
 </html>
