@@ -73,7 +73,7 @@ def component():
 def extends():
     return render_template('extends.html')
 
-# if for
+# filter
 @app.route('/filter')
 def filter():
     age = 20
@@ -84,6 +84,11 @@ def filter():
                             age=age,
                             colors=colors,
                             )
+
+# その他
+@app.route('/other')
+def other():
+    return render_template('other.html')
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 80, True)
