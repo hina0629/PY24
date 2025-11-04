@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Ex3 ランダム画像</h2>
+    {% if number == 1 %}
+        <img src="{{ url_for('static', filename='img/omikuji-daikichi.png') }}" alt="大吉">
+    {% elif number == 2 %}
+        <img src="{{ url_for('static', filename='img/omikuji-kichi.png') }}" alt="吉">
+    {% else %}
+        <img src="{{ url_for('static', filename='img/omikuji-kyo.png') }}" alt="凶">
+    {% endif %}
+{% endblock %}

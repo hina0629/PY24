@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>課題No.02 Flask Templates</h2>
+    <h3 class="ex6_h3">Ex6 レイアウト継承</h3>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <ul>
+        <li><a href="{{ url_for('index') }}">index</a></li>
+    </ul>
+</body>
+</html>

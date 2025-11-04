@@ -1,0 +1,22 @@
+{% extends 'ex6_base.html' %}
+
+{% block content %}
+    <h3>Ex7 レイアウト継承＆商品一覧</h3>
+
+    <table>
+            <tr>
+                <th>商品ID</th>
+                <th>商品名</th>
+                <th>単価</th>
+                <th>イメージ</th>
+            </tr>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td><img src="../static/img/omikuji-{{ product.img }}.png" alt=""></td>
+                </tr>
+            {% endfor %}
+        </table>
+{% endblock %}

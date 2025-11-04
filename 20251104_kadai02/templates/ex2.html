@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Ex2 ランダムメッセージ</h2>
+    {% if number == 1 %}
+        <p>大吉</p>
+    {% elif number == 2 %}
+        <p>吉</p>
+    {% else %}
+        <p>凶</p>
+    {% endif %}
+{% endblock %}
