@@ -14,7 +14,7 @@ def ex1():
     number = random.randint(1,3)
     return render_template(
         'ex1.html',
-        number = number
+        number=number
     )
 
 @app.route('/ex2')
@@ -23,7 +23,7 @@ def ex2():
     number = random.randint(1,3)
     return render_template(
         'ex2.html',
-        number = number
+        number=number
     )
 
 @app.route('/ex3')
@@ -32,7 +32,7 @@ def ex3():
     number = random.randint(1,3)
     return render_template(
         'ex3.html',
-        number = number
+        number=number
     )
 
 @app.route('/ex4')
@@ -45,7 +45,7 @@ def ex4():
     
     return render_template(
         'ex4.html',
-        numbers = numbers
+        numbers=numbers
     )
 
 @app.route('/ex5')
@@ -58,7 +58,7 @@ def ex5():
     
     return render_template(
         'ex5.html',
-        numbers = numbers
+        numbers=numbers
     )
 
 @app.route('/ex6')
@@ -77,7 +77,7 @@ def ex7():
         ]
     return render_template(
         'ex7.html',
-        products = products
+        products=products
     )
 
 @app.route('/option1')
@@ -90,7 +90,7 @@ def option1():
         ]
     return render_template(
         'option1.html',
-        products = products
+        products=products
     )
 
 @app.route('/option1_2')
