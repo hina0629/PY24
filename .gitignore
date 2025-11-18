@@ -6,3 +6,6 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# 課題2模範
+Kadai02_Flask_templates/
