@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form</h1>
+    <form action="{{ url_for('confirm') }}" method="post">
+        <h2>単一値</h2>
+        ID:<input type="text" name="id">
+        <h2>複数値</h2>
+        Check:
+        <label><input type="checkbox" name="check" value="a">AAA</label>
+        <label><input type="checkbox" name="check" value="b">BBB</label><br>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>

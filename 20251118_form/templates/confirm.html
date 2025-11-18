@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Confirm</h1>
+    <p>request はテンプレートでも使える！</p>
+    ID:{{ request.form.get('id') }}
+
+    {% for check in request.form.getlist('check') %}
+        {{ check }}
+    {% endfor %}
+</body>
+</html>
