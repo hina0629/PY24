@@ -5,7 +5,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>index</h1>
-    <a href="{{ url_for('old') }}">old</a>
+    <h1>GETパラメータ</h1>
+    <a href="{{ url_for('next', id=123, names=['aaa', 'bbb']) }}">next</a>
+    {# おまけ
+        ?id=xxx といった形式を クエリパラメータ
+        product/123 といった形式を パスパラメータ と言う #}
 </body>
 </html>

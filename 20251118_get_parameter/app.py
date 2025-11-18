@@ -1,31 +1,4 @@
-# リダイレクト
-#  /aにアクセスしたのに、/bにアクセスしていた。
-#  といった様に、ブラウザのリクエストURLを変更することが出来る。
-#  これはHTTPの仕様で、本来はサイト移転時の対応が目的であり、リダイレクトと呼ばれる。
-#   例）新サイトOpen！　旧サイトから切り替えたいけど、
-# 　　　ユーザーは旧サイトのURLでアクセスしてくる。。。
-#      じゃぁ、旧サイトにアクセスしてきたら、
-#      新サイトのURLにアクセスするようにさせよう！
-#      　→リダイレクト
-# [リダイレクトの流れ] ※B…ブラウザ。S…サーバー。
-#  ①BがSにリクエストを投げる。
-#  ②Sがレスポンスを返すが、その際、移転したので、別URLに再度アクセスし直すように指示。
-#  ③Bがレスポンスを受け取ると、指示通りのURLにリクエストを投げる。
-#  ④SはBにレスポンスする。
-#
-#  →1回のリクエストの様に見えるけど、2回のリクエストとレスポンスが発生している。
-#
-# [サーバー目線でリダイレクトを一言で説明]
-#  クライアントに、要求し直させる仕組み。
-#
-# [用途]
-#  ①サイト切り替えの際に用いる。※冒頭の例。
-#  ②エラーとなった際に、エラーページに飛ばす。
-#  ③ログイン認証後に、特定のページに飛ばす。
-#  ④セッションタイムアウト後に、ログインページに飛ばす。
-#  ⑤PRG(Post Redirect Get)パターン等々。
-
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -33,13 +6,48 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/old')
-def old():
-    return redirect(url_for('new'))
+@app.route('/next')
+def next():
+    # クエリパラメータを取得するには、
+    # request.argsを用いる
 
-@app.route('/new')
-def new():
-    return render_template('new.html')
+    # 単一値の取得(ラジオボタンとか<input type='text'>とか)
+    # -------------------------------------------------- #
+    # 方法その１
+    id = request.args.get('id')
+
+    # 取得できなければNoneが返る。
+    id = request.args.get('id2')
+    if id is None:
+        id = 'None'
+
+    # Noneの場合の固定値設定も可
+    id = request.args.get('id2', default='none')
+
+    # ちゃんとしたチェック処理を作ってみると．．．
+    id = request.args.get('id')
+    # ちゃんと渡ってきているかのチェック
+    if not id:
+        return 'IDは必須'
+
+    # -------------------------------------------------- #
+    # 方法その２
+    id = request.args['id']
+
+    # こっちの場合、取得できない場合はエラーとなる
+    # id = request.args['id2'] -> BadRequestKeyError
+
+    # -------------------------------------------------- #
+    # 複数値の取得
+    names = request.args.getlist('names')
+    names = request.args.getlist('names2')
+    # 取得できない場合は空のリスト
+    
+    # 空チェック
+    if not names:
+        return '空'
+    
+    return id + ''.join(names)
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 80, True)
