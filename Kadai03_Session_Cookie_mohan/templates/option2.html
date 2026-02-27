@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>課題No.03</h1>
+    <h2>Option2 一言メモ</h2>
+    <form method="post">
+        <label>メモ:<input type="text" name="text"></label><br>
+        <input type="submit" value="追加">
+    </form>
+    {% if session.get('memo') %}
+        <ul>
+        {% for text in session.get('memo') %}
+            <li>{{text}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <p><a href="{{url_for('index')}}">index</a></p>
+</body>
+</html>

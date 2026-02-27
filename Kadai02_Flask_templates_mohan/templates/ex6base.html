@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadai02</title>
+</head>
+<body>
+    <div>
+        <h1>課題No.02 Flask Templates</h1>
+        <h2 style="color:blue">Ex6 レイアウト継承</h2>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <nav>
+            <li><a href="{{url_for('index')}}">index</a></li>
+        </nav>
+    </div>
+</body>
+</html>

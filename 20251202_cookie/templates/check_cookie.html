@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check_Cookie</h1>
+    <p>{{ request.cookies.get('id') }}</p>
+    <p><a href="{{ url_for('index') }}">index</a></p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'ex6base.html' %}
+
+{% block content %}
+<h2>Option1 レイアウト継承&商品一覧(空対応)</h2>
+{% if products %}
+<table>
+    <tr><th>商品ID</th><th>商品名</th><th>単価</th><th>イメージ</th></tr>
+    {% for product in products %}
+    <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td><img src="{{ url_for('static', filename=product.img) }}" style="width:50px"></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>データが１件も登録されていません。</p>
+{% endif %}
+{% endblock %}

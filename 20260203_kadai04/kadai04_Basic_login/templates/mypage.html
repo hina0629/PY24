@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>課題No.04 Basic Login</h1>
+    <h2>Mypage</h2>
+    <p>ようこそ{{ session.get('id') }}</p>
+    <p><a href="{{url_for('index')}}">index</a></p>
+    <p><a href="{{url_for('logout')}}">logout</a></p>
+</body>
+</html>

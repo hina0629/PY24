@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>課題No.04 Basic Login</h1>
+    <h2>Login</h2>
+    <form method="post">
+        <label>ID:<input type="text" name="id"></label><br>
+        <label>Password:<input type="password" name="password"></label><br>
+        <button type="submit">login</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <span style="color:red">{{ messages[0] }}</span><br>
+        {% endif %}
+    {% endwith %}
+
+    <a href="{{url_for('index')}}">index</a>
+</body>
+</html>

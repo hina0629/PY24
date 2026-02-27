@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p.error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        email：<input type="email" name="email" value="{{ email }}"><br>
+        password：<input type="password" name="password"><br>
+        <button>login</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <p class="{{messages[0][0]}}">{{messages[0][1]}}</p>
+        <!-- [0][0]にカテゴリ、[0][1]にメッセージが格納されている。 -->
+        {% endif %}
+    {% endwith %}
+
+    <p><a href="{{ url_for('index') }}">戻る</a></p>
+</body>
+</html>

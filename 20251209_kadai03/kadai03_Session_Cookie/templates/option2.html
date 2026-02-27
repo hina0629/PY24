@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Option2 一言メモ</h2>
+    <form method="POST">
+        <label for="memo">メモ:</label>
+        <input type="text" id="memo" name="memo">
+        <br>
+        <button type="submit">追加</button>
+    </form>
+    <ul>
+        {% for session in session_list %}
+            <li>{{ session }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('index') }}">index</a></p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>新規登録</h1>
+  <p><a href="{{ url_for('index') }}">→戻る</a></p>
+  <form method="post">
+    <p>名前: <input type="text" name="name"><br></p>
+    <p>価格: <input type="text" name="price"><br></p>
+    <button>登録</button>
+  </form>
+</body>
+</html>

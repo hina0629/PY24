@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>課題No.03</h1>
+    <h2>Ex7 Session</h2>
+    <form method="post">
+        <label>ID:<input type="text" name="id"></label><br>
+        <input type="submit" value="送信">
+    </form>
+    <p>Ex8:{{session.get('id', '')}}</p>
+    <p><a href="{{url_for('ex9_delete_session')}}">Ex9 Session削除</a></p>
+    <p><a href="{{url_for('index')}}">index</a></p>
+</body>
+</html>

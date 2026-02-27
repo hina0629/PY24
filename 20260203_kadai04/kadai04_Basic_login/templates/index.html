@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>課題No.04 Basic Login</h1>
+    <h2>Index</h2>
+    {% if session.get('id') %}
+        <p><a href="{{url_for('mypage')}}">mypage</a></p>
+    {% else %}
+        <p><a href="{{url_for('login')}}">login</a></p>
+    {% endif %}
+</body>
+</html>

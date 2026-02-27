@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadai02</title>
+</head>
+<body>
+    <div>
+        <h1>課題No.02 Flask Templates</h1>
+        <h2>Ex2 ランダムメッセージ</h2>
+        <p>注意：Jinja2でのifの練習です。※リスト+添え字のロジックは今回なし。</p>
+
+        {% if rand == 1 %}
+        <p>大吉</p>
+        {% elif rand == 2 %}
+        <p>吉</p>
+        {% else %}
+        <p>凶</p>
+        {% endif %}
+
+        <nav>
+            <li><a href="{{url_for('index')}}">index</a></li>
+        </nav>
+    </div>
+</body>
+</html>

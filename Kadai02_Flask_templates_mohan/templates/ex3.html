@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadai02</title>
+</head>
+<body>
+    <div>
+        <h1>課題No.02 Flask Templates</h1>
+        <h2>Ex3 ランダム画像</h2>
+        <p><img src="{{ url_for('static', filename=rand + '.png') }}"></p>
+
+        <nav>
+            <li><a href="{{url_for('index')}}">index</a></li>
+        </nav>
+    </div>
+</body>
+</html>
